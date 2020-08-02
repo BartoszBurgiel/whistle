@@ -10,14 +10,15 @@ func Encode(str, key string) (enc string) {
 
 	for i, s := range str {
 		ss := byte(s)
-		enc += string(encodeByte(ss, key, i))
+		enc += string(EncodeByte(ss, key, i))
 	}
 
 	return enc[:len(enc)-1]
 }
 
-// encode a single byte with the given key
-func encodeByte(b byte, key string, i int) string {
+// EncodeByte with the given key and index of the
+// byte in the text
+func EncodeByte(b byte, key string, i int) string {
 	var temp uint64 = uint64(b)
 
 	// sum of all key letters

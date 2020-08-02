@@ -17,14 +17,14 @@ func Decode(enc, key string) (str string) {
 		if err != nil {
 			fmt.Println(err)
 		}
-		str += decodeByte(ss, key, i)
+		str += DecodeByte(ss, key, i)
 	}
 
 	return str
 }
 
-// decode a single byte of the encrypted string
-func decodeByte(b uint64, key string, i int) string {
+// DecodeByte of the encrypted string with the given index
+func DecodeByte(b uint64, key string, i int) string {
 
 	sum := 0
 	for _, s := range key {
