@@ -1,4 +1,4 @@
-package pwordsencode
+package whistle
 
 import (
 	"fmt"
